@@ -1,0 +1,35 @@
+/* Core styling elements */
+@import url("../../styles/base/core.css");
+
+.filter-bar{
+    position: sticky;
+    top: 72px;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    border-bottom: 2.5px solid var(--alternate-color);
+    z-index: 1000;
+}
+
+.filter-group{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.filter-item select{
+    height: 40px;
+    width: 100px;
+    padding: 0px 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--alternate-color);
+}
+
+@media screen and (max-width: 700px) {
+    .filter-group{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}

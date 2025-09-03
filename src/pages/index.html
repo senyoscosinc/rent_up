@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/styles/base/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/icons/css/uicons-thin-straight.css">
+    <!-- STYLESHEETS -->
+     <link rel="stylesheet" href="../assets/styles/components/navbar_styles.css">
+     <link rel="stylesheet" href="../assets/styles/components/properties_display.css">
+     <link rel="stylesheet" href="../assets/styles/components/footer.css">
+    <title>Rent Up - Find Your Perfect Home</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-left">
+            <button class="nav-btn" id="nav-menu-btn">Menu</button>
+            <div class="navbar-search">
+                <input type="text" placeholder="Search properties...">
+                <button></button>
+            </div>
+        </div>
+        <div class="logo">
+            <a href="index.html"><h1>Rent Up</h1></a>
+        </div>
+        <div class="nav-right" id="nav-right">
+            <button class="nav-btn" id="login-button">Login</button>
+            <button class="cta-btn">Join Rent Up</button>
+        </div>
+
+        <div id="overlay"></div>
+        <div class="nav-menu" id="nav-menu">
+            <div class="nav-header">
+                <button class="nav-btn" id="close-nav-menu">close</button>
+            </div>
+            <div class="nav-links">
+                <h1>Properties</h1>
+                <h1>About Rent Up</h1>
+                <h1>Contact us</h1>
+            </div>
+
+            <script>
+                const navMenuBtn = document.getElementById("nav-menu-btn");
+                const navMenu = document.getElementById("nav-menu");
+                const closeNavMenu = document.getElementById("close-nav-menu");
+                const overlay = document.getElementById("overlay");
+
+                // Function to open
+                function openMenu() {
+                navMenu.classList.add("active");
+                overlay.classList.add("active");
+                }
+
+                // Function to close
+                function closeMenu() {
+                navMenu.classList.remove("active");
+                overlay.classList.remove("active");
+                }
+
+                // Open when clicking button
+                navMenuBtn.addEventListener("click", openMenu);
+
+                // Close when clicking X
+                closeNavMenu.addEventListener("click", closeMenu);
+
+                // Close when clicking overlay
+                overlay.addEventListener("click", closeMenu);
+
+                // Close when pressing Escape key
+                document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    closeMenu();
+                }
+                });
+
+
+            </script>
+        </div>
+
+        <!-- Script for adding bottom shadow to navbar on scroll -->
+        <script>
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+        </script>
+    </nav>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-header">
+                <h1>PROPERTY TRANSACTION DONE RIGHT</h1>
+                <p>Find the perfect property effortlessly. Whether it’s an apartment, office, or equipment, Rent Up connects you with the best options quickly and securely. Start renting smarter today!</p>
+            </div>
+            <div class="hero-cta">
+                <a href="properties.html"><button class="cta-btn">Browse properties</button></a>
+            </div>
+            <div class="hero-feature">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <p class="stat-value">12,500+</p>
+                        <p class="stat-label">Monthly Users</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                        <p class="stat-value">3,200+</p>
+                        <p class="stat-label">Viewings Booked</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-building"></i></div>
+                        <p class="stat-value">1,050+</p>
+                        <p class="stat-label">Properties Listed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMO SECTION -->
+        <section class="promo-feat">
+            <h1>FIND YOUR IDEAL APARTMENT,</h1><img src="../assets/images/ui/apartment.jpg" alt="a cozy apartment">
+            <h1>HOUSE,</h1><img src="../assets/images/ui/house.jpg" alt="a small white house">
+            <h1>STORE LOCATION,</h1><img src="../assets/images/ui/store-location.jpg" alt="clothing store">
+            <h1>OFFICE SPACE,</h1><img src="../assets/images/ui/office_space.jpg" alt="office space">
+            <h1>EVENT SPACE,</h1><img src="../assets/images/ui/event_spcae.jpg" alt="event space">
+            <h1>LAND</h1><img src="../assets/images/ui/land.jpg" alt="">
+        </section>
+
+        <!-- PROPERTIES SECTION -->
+        <section class="properties-section">
+            <h1>Properties you might be interested in</h1>
+            <div class="properties-grid" id="propertiesGrid"><!--Dynamically updated--></div>
+            <div class="prop-sect-btm">
+                <button class="cta-btn">Browse Properties <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- PROPERTY DETAILS SECTION -->
+        <section class="property-details-section" id="propertyDetailsSection" style="display: none;">
+            <button class="close-details-btn" id="closeDetailsBtn">&times;</button>
+            <div class="property-details-container">
+                <div class="property-details-content" id="propertyDetailsContent">
+                    <!-- Property details will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="convincing">
+            <div class="convincing-lft">
+                <h1>Why transact with Rent Up?</h1>
+                <p>Find the perfect property effortlessly. Whether it’s an apartment, office, or equipment, Rent Up connects you with the best options quickly and securely. Start renting smarter today!</p>
+                <a href="properties.html"><button class="cta-btn">Browse properties</button></a>
+            </div>
+            <div class="convincing-rt">
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. Integer ullamcorper leo vitae lectus vulputate, ac pharetra justo laoreet. Nam lacinia est et sapien viverra, a consequat lorem maximus. </li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. Integer ullamcorper leo vitae lectus vulputate, ac pharetra justo laoreet. Nam lacinia est et sapien viverra, a consequat lorem maximus. </li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. Integer ullamcorper leo vitae lectus vulputate, ac pharetra justo laoreet. Nam lacinia est et sapien viverra, a consequat lorem maximus. </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <!-- review header -->
+            <div class="review-header">
+                <h1>Here is what some of our users have to say</h1>
+                <div class="review-toggles">
+                    <button class="nav-btn" id="prevBtn">Prev</button>
+                    <button class="nav-btn" id="nextBtn">Nxt</button>
+                </div>
+            </div>
+            <!-- review cards -->
+            <div class="review-cards">
+                <div class="review-card">
+                    <img src="../assets/images/profile_1.jpg" alt="">
+                    <p><span>Jade - Optometrist</span> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. </p>
+                </div>
+                <div class="review-card">
+                    <img src="../assets/images/profile_2.webp" alt="">
+                    <p><span>Jade - Optometrist</span> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. </p>
+                </div>
+                <div class="review-card">
+                    <img src="../assets/images/profile_3.jpeg" alt="">
+                    <p><span>Jade - Optometrist</span> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. </p>
+                </div><div class="review-card">
+                    <img src="../assets/images/profile_4.jpg" alt="">
+                    <p><span>Jade - Optometrist</span> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. </p>
+                </div>
+            </div>
+
+            <!-- scripting for carousel type cards -->
+            <script>
+                const reviewCards = document.querySelector(".review-cards");
+                const prevBtn = document.getElementById("prevBtn");
+                const nextBtn = document.getElementById("nextBtn");
+
+                const scrollAmount = 300; // adjust based on card width
+
+                nextBtn.addEventListener("click", () => {
+                    reviewCards.scrollBy({ left: scrollAmount, behavior: "smooth" });
+                });
+
+                prevBtn.addEventListener("click", () => {
+                    reviewCards.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+                });
+            </script>
+        </section>
+
+        <section class="animated-banner">
+            <div class="ticker">
+                <div class="ticker-content">
+                <span>Buy</span>
+                <span>Rent</span>
+                <span>Sell</span>
+                <span>Lease</span>
+                <!-- repeat to create seamless loop -->
+                <span>Buy</span>
+                <span>Rent</span>
+                <span>Sell</span>
+                <span>Lease</span>
+                <!-- repeat to create seamless loop -->
+                <span>Buy</span>
+                <span>Rent</span>
+                <span>Sell</span>
+                <span>Lease</span>
+                <!-- repeat to create seamless loop -->
+                <span>Buy</span>
+                <span>Rent</span>
+                <span>Sell</span>
+                <span>Lease</span>
+                <!-- repeat to create seamless loop -->
+                <span>Buy</span>
+                <span>Rent</span>
+                <span>Sell</span>
+                <span>Lease</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="ftr-cta">
+                <h1>Find your dream property today</h1>
+                <a href="properties.html"><button class="cta-btn">Browse properties</button></a>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <p>Apartments</p>
+                    <p>Residential homes</p>
+                    <p>Land</p>
+                    <p>Commercial spaces</p>
+                    <p>Corporate spaces</p>
+                    <p>Event spaces</p>
+                </div>
+                <div>
+                    <p>About</p>
+                    <p>Contact</p>
+                    <p>Support</p>
+                    <p>FAQs</p>
+                </div>
+                <div>
+                    <p>Cookies</p>
+                    <p>Terms of use</p>
+                    <p>Privacy policy</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rent Up. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../assets/js/data/propertiesData.js"></script>
+    <script src="../assets/js/components/propertyRenderer.js"></script>
+    <script src="../assets/js/utils/searchUtils.js"></script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - Rent Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- STYLESHEET -->
+     <link rel="stylesheet" href="../assets/styles/components/navbar_styles.css">
+     <link rel="stylesheet" href="../assets/styles/pages/properties_page.css">
+     <link rel="stylesheet" href="../assets/styles/components/properties_display.css">
+     <link rel="stylesheet" href="../assets/styles/components/footer.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-left">
+            <button class="nav-btn" id="nav-menu-btn">Menu</button>
+            <div class="navbar-search">
+                <input type="text" placeholder="Search properties...">
+                <button></button>
+            </div>
+        </div>
+        <div class="logo">
+            <a href="index.html"><h1>Rent Up</h1></a>
+        </div>
+        <div class="nav-right" id="nav-right">
+            <button class="nav-btn" id="login-button">Login</button>
+            <button class="cta-btn">Join Rent Up</button>
+        </div>
+
+        <div id="overlay"></div>
+        <div class="nav-menu" id="nav-menu">
+            <div class="nav-header">
+                <button class="nav-btn" id="close-nav-menu">close</button>
+            </div>
+            <div class="nav-links">
+                <h1>Properties</h1>
+                <h1>About Rent Up</h1>
+                <h1>Contact us</h1>
+            </div>
+
+            <script>
+                const navMenuBtn = document.getElementById("nav-menu-btn");
+                const navMenu = document.getElementById("nav-menu");
+                const closeNavMenu = document.getElementById("close-nav-menu");
+                const overlay = document.getElementById("overlay");
+
+                // Function to open
+                function openMenu() {
+                navMenu.classList.add("active");
+                overlay.classList.add("active");
+                }
+
+                // Function to close
+                function closeMenu() {
+                navMenu.classList.remove("active");
+                overlay.classList.remove("active");
+                }
+
+                // Open when clicking button
+                navMenuBtn.addEventListener("click", openMenu);
+
+                // Close when clicking X
+                closeNavMenu.addEventListener("click", closeMenu);
+
+                // Close when clicking overlay
+                overlay.addEventListener("click", closeMenu);
+
+                // Close when pressing Escape key
+                document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    closeMenu();
+                }
+                });
+
+
+            </script>
+        </div>
+
+        <!-- Script for adding bottom shadow to navbar on scroll -->
+        <script>
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+        </script>
+    </nav>
+    
+    <section class="filter-bar">
+        <div class="filter-group">
+            <div class="filter-item">
+                <label for="type">Type</label>
+                <select id="type">
+                    <option value="">All</option>
+                    <option value="Residential">Residential</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Office">Office</option>
+                    <option value="Event Space">Event Space</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="size">Size</label>
+                <select id="size">
+                    <option value="">All</option>
+                    <option value="1000">1,000 sqft</option>
+                    <option value="5000">5,000 sqft</option>
+                    <option value="10000">10,000 sqft</option>
+                    <option value="30000">30,000 sqft</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="price">Price</label>
+                <select id="price">
+                    <option value="">All</option>
+                    <option value="1000">GHS 1,000</option>
+                    <option value="5000">GHS 5,000</option>
+                    <option value="10000">GHS 10,000</option>
+                    <option value="50000">GHS 50,000</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="period">Period</label>
+                <select id="period">
+                    <option value="">All</option>
+                    <option value="Month">Month</option>
+                    <option value="Hour">Hour</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="location">Location</label>
+                <select id="location">
+                    <option value="">All</option>
+                    <option value="Accra">Accra</option>
+                    <option value="Dansoman">Dansoman</option>
+                    <option value="Tesano">Tesano</option>
+                    <option value="East Legon">East Legon</option>
+                    <option value="North Kaneshie">North Kaneshie</option>
+                    <option value="Teshie">Teshie</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPERTIES SECTION -->
+        <section class="properties-section">
+            <h1>Properties you might be interested in</h1>
+            <div class="properties-grid" id="propertiesGrid"><!--Dynamically updated--></div>
+            <div class="prop-sect-btm">
+                <button class="cta-btn">Browse Properties <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- PROPERTY DETAILS SECTION -->
+        <section class="property-details-section" id="propertyDetailsSection" style="display: none;">
+            <button class="close-details-btn" id="closeDetailsBtn">&times;</button>
+            <div class="property-details-container">
+                <div class="property-details-content" id="propertyDetailsContent">
+                    <!-- Property details will be populated here -->
+                </div>
+            </div>
+        </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="ftr-cta">
+                <h1>Find your dream property today</h1>
+                <button class="cta-2">Browse properties</button>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <p>Apartments</p>
+                    <p>Residential homes</p>
+                    <p>Land</p>
+                    <p>Commercial spaces</p>
+                    <p>Corporate spaces</p>
+                    <p>Event spaces</p>
+                </div>
+                <div>
+                    <p>About</p>
+                    <p>Contact</p>
+                    <p>Support</p>
+                    <p>FAQs</p>
+                </div>
+                <div>
+                    <p>Cookies</p>
+                    <p>Terms of use</p>
+                    <p>Privacy policy</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rent Up. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/data/propertiesData.js"></script>
+    <script src="../assets/js/components/propertyRenderer.js"></script>
+    <script src="../assets/js/utils/searchUtils.js"></script>
+    <script src="../assets/js/data/properties.js"></script>
+</body>
+</html> 

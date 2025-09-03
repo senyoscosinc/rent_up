@@ -1,0 +1,393 @@
+/* Core styling elements */
+@import url("../../styles/base/core.css");
+
+/* Bounce animation */
+@keyframes bounceIn {
+    0%   { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    60%  { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    80%  { transform: translate(-50%, -50%) scale(0.95); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+
+/* Properties Section */
+.properties-section {
+    width: 100%;
+    margin: 50px 0px;
+    padding: 0px 20px;
+}
+.properties-section h1 {
+    margin-bottom: 20px;
+}
+
+.properties-grid {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    padding-bottom: 50px;
+    border-bottom: 1.5px solid var(--secondary-color);
+}
+
+/* Device width less than 600px → 1 columns */
+@media (max-width: 599px) {
+    .properties-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Device width between 600px and 900px → 3 columns */
+@media (min-width: 600px) and (max-width: 899px) {
+    .properties-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Device width between 900px and 1200px → 4 columns */
+@media (min-width: 900px) and (max-width: 1199px) {
+    .properties-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Device width between 1200px and 1400px → 5 columns */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .properties-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Device width greater than 1400px → 6 columns */
+@media (min-width: 1400px) {
+    .properties-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+
+/* PROPERTY CARDS DISPLAYED IN THE PROPERTIES GRID */
+.property-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--alternate-color);
+    border-radius: 10px;
+    transition: box-shadow 0.2s, transform 0.2s ease-in-out;
+}
+
+.property-card:hover {transform: translateY(-4px) scale(1.01);}
+
+.property-image {
+    height: 200px;
+    width: 95%;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.property-info {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    padding: 10px;
+    color: var(--augmenting-color);
+}
+
+.property-info h3 {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.property-info .location {
+    font-size: 0.95rem;
+    color: #afafaf;
+    margin-bottom: 5px;
+}
+
+.property-info .price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.property-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0px;
+    font-size: 0.93rem;
+    color: #272727;
+}
+
+.view-property-btn{
+    width: 95%;
+    height: 50px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: var(--complemantary-color);
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    color: var(--primary-color);
+}
+
+.property-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15px;
+    right: 12px;
+    height: 30px;
+    width: 70px;
+    border-radius: 3.5px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+}
+
+.property-tag.rent {
+    background: rgba(127, 163, 80, 0.5);
+    color: #448026;
+}
+
+.property-tag.sale {
+    background: rgba(163, 80, 80, 0.5);
+    color: #B60000;
+}
+
+.property-tag.lease {
+    background: rgba(227, 210, 16, 0.5);
+    color: #D7BA00;
+}
+
+.prop-sect-btm{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+.prop-sect-btm .cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* PROPERTY DETAILS POP-UP CARD */
+.property-details-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    width: 90vw;
+    padding: 20px;
+    background: #3f4e4fb2;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 10px;
+    z-index: 5000;
+
+}
+
+.property-details-section {display: none;}
+
+.bounce-in {animation: bounceIn 0.6s ease forwards;}
+
+.close-details-btn {
+    float: right;
+    background: transparent;
+    color: var(--font-color-main);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.property-details-container {
+    height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--augmenting-color);
+    padding: 20px;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.25);
+}
+
+.property-details-container::-webkit-scrollbar{display: none;}
+
+.property-details-container h1, .property-details-container h2{color: var(--complemantary-color);}
+
+.property-details-container hr{
+    height: 1.5px;
+    width: 100%;
+    margin: 30px auto;
+    background-color: var(--secondary-color);
+    border: none;
+}
+
+.property-details-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.property-details-location{
+    margin-bottom: 30px;
+}
+
+.property-details-tag.rent {
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(127, 163, 80, 0.5);
+    color: #448026;
+}
+
+.property-details-tag.sale {
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(163, 80, 80, 0.5);
+    color: #B60000;
+}
+
+.property-details-tag.lease {
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(227, 210, 16, 0.5);
+    color: #D7BA00;
+}
+
+.property-details-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 40px;
+}
+
+.property-image-large {
+    width: 100%;
+}
+
+.property-image-large img {
+    width: 100%;
+    height: 450px;
+    border-radius: 5px;
+}
+
+.property-info-detailed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.property-views{
+    padding: 10px;
+    border: 1.5px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.property-specs-detailed {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.property-specs-detailed p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.property-specs-detailed strong {
+    color: var(--font-color-main);
+}
+
+.property-amenities{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two equal columns */
+    gap: 20px; /* space between columns */
+}
+
+.book-viewing{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two equal columns */
+    gap: 100px;
+    width: 100%;
+    margin: 50px auto 0px;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .property-amenities, .book-viewing{grid-template-columns: 1fr;}
+}
+
+.booking-instructions ol{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Camingo Code";
+    padding-left: 30px;
+}
+
+.booking-form input{
+    height: 40px;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 0px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.booking-form input{
+    border: none;
+}
+
+.booking-form .cta-btn{
+    width: 100%;
+    margin: 20px 0px;
+}
+
+/* Responsive design for property details */
+@media (max-width: 768px) {
+    .property-details-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .property-details-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .property-details-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .property-image-large img {
+        height: 250px;
+    }
+}
+
+
