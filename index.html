@@ -12,6 +12,7 @@
      <link rel="stylesheet" href="src/assets/styles/components/properties_display.css">
      <link rel="stylesheet" href="src/assets/styles/components/footer.css">
      <link rel="stylesheet" href="src/assets/styles/base/styles.css">
+     <link rel="stylesheet" href="src/assets/styles/components/login_and_sign_up.css">
     <title>Rent Up - Find Your Perfect Home</title>
 </head>
 <body>
@@ -76,8 +77,6 @@
                     closeMenu();
                 }
                 });
-
-
             </script>
         </div>
 
@@ -93,6 +92,39 @@
             });
 
         </script>
+
+         <div id="login-overlay" class="overlay" aria-hidden="true">
+            <div id="login-card" class="login-card" role="dialog" aria-modal="true" aria-hidden="true">
+                <h1>Welcome back!</h1>
+                <p>Login to continue</p>
+                <div class="toggle" role="tablist" aria-label="Choose role">
+                    <button id="login-lister-btn" class="active" role="tab" aria-selected="true">Lister</button>
+                    <button id="login-seeker-btn" role="tab" aria-selected="false">Seeker</button>
+                </div>
+                <div class="forms" id="login-forms">
+                    <form id="login-lister-form" class="form active" autocomplete="on">
+                        <h2>Login as lister</h2>
+                        <input type="email" id="login-lister-email" placeholder="Lister email" required />
+                        <input type="password" id="login-lister-password" placeholder="Password" required />
+                        <button type="submit">Login as Lister</button>
+                        <p style="margin-bottom: 0px;">OR</p>
+                        <button class="google-login">Continue with google</button>
+                    </form>
+                    <form id="login-seeker-form" class="form to-right" autocomplete="on">
+                        <h2>Login as seeker</h2>
+                        <input type="email" id="login-seeker-email" placeholder="Seeker email" required />
+                        <input type="password" id="login-seeker-password" placeholder="Password" required />
+                        <button type="submit">Login as Seeker</button>
+                        <p style="margin-bottom: 0px;">OR</p>
+                        <button class="google-login">Continue with google</button>
+                    </form>
+                </div>
+
+                <div class="meta">Don't have an account? <a href="#">Sign up</a></div>
+            </div>
+        </div>
+
+        <script src="src/assets/js/components/component_renderer.js"></script>
     </nav>
     
     <main>
@@ -128,12 +160,12 @@
 
         <!-- PROMO SECTION -->
         <section class="promo-feat">
-            <h1>FIND YOUR IDEAL APARTMENT,</h1><img src="../assets/images/ui/apartment.jpg" alt="a cozy apartment">
-            <h1>HOUSE,</h1><img src="../assets/images/ui/house.jpg" alt="a small white house">
-            <h1>STORE LOCATION,</h1><img src="../assets/images/ui/store-location.jpg" alt="clothing store">
-            <h1>OFFICE SPACE,</h1><img src="../assets/images/ui/office_space.jpg" alt="office space">
-            <h1>EVENT SPACE,</h1><img src="../assets/images/ui/event_spcae.jpg" alt="event space">
-            <h1>LAND</h1><img src="../assets/images/ui/land.jpg" alt="">
+            <h1>FIND YOUR IDEAL APARTMENT,</h1><img src="src/assets/images/ui/apartment.jpg" alt="a cozy apartment">
+            <h1>HOUSE,</h1><img src="src/assets/images/ui/house.jpg" alt="a small white house">
+            <h1>STORE LOCATION,</h1><img src="src/assets/images/ui/store-location.jpg" alt="clothing store">
+            <h1>OFFICE SPACE,</h1><img src="src/assets/images/ui/office_space.jpg" alt="office space">
+            <h1>EVENT SPACE,</h1><img src="src/assets/images/ui/event_spcae.jpg" alt="event space">
+            <h1>LAND</h1><img src="src/assets/images/ui/land.jpg" alt="">
         </section>
 
         <!-- PROPERTIES SECTION -->
@@ -182,18 +214,18 @@
             <!-- review cards -->
             <div class="review-cards">
                 <div class="review-card">
-                    <img src="../assets/images/profile_1.jpg" alt="">
+                    <img src="src/assets/images/profile_1.jpg" alt="">
                     <p><span>Jade - Optometrist</span> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. </p>
                 </div>
                 <div class="review-card">
-                    <img src="../assets/images/profile_2.webp" alt="">
+                    <img src="src/assets/images/profile_2.webp" alt="">
                     <p><span>Jade - Optometrist</span> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. </p>
                 </div>
                 <div class="review-card">
-                    <img src="../assets/images/profile_3.jpeg" alt="">
+                    <img src="src/assets/images/profile_3.jpeg" alt="">
                     <p><span>Jade - Optometrist</span> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. </p>
                 </div><div class="review-card">
-                    <img src="../assets/images/profile_4.jpg" alt="">
+                    <img src="src/assets/images/profile_4.jpg" alt="">
                     <p><span>Jade - Optometrist</span> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante id nunc dapibus feugiat. </p>
                 </div>
             </div>

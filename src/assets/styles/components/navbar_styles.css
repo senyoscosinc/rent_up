@@ -102,7 +102,6 @@ nav.scrolled {
     left: -42vw;   /* hidden off-screen */
     width: 40vw;
     height: 100vh;
-    border-radius: 10px;
     background: var(--augmenting-color);
     box-shadow: 2px 0 10px rgba(0,0,0,0.2);
     transition: left 0.4s cubic-bezier(0.25, 1.25, 0.5, 1);
@@ -113,10 +112,11 @@ nav.scrolled {
     height: 60px;
     width: 100%;
     padding: 20px;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--alternate-color);
 }
 
 #close-nav-menu{
+    float: right;
     color: var(--primary-color);
 }
 
@@ -127,8 +127,13 @@ nav.scrolled {
 .nav-links h1{
     width: 100%;
     padding: 20px;
-    border-bottom: 1px solid var(--secondary-color);
     color: var(--primary-color);
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.nav-links h1:hover{
+    border-left: 30px solid var(--complemantary-color);
 }
 
 /* Active states */
