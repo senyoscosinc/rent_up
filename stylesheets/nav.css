@@ -1,0 +1,54 @@
+@import url('index.css');
+
+nav {
+    width: 98.5%;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto 0px;
+    padding: 0px 20px;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--invisible-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-left {color: var(--primary-color);}
+
+.nav-contact-btn {
+    color: var(--primary-color);
+    background-color: transparent;
+}
+.nav-contact-btn:hover {text-decoration: underline;}
+
+.nav-cta {
+    background-color: var(--secondary-color);
+    color: var(--secondary-font-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+.nav-cta:hover {background-color: var(--primary-color);}
+
+.drop-down-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: var(--secondary-font-color);
+}
+
+@media screen and (max-width: 800px) {
+    .nav-cta, .nav-contact-btn {display: none;}
+}
+@media screen and (min-width: 801px) {
+    .drop-down-button {display: none;}
+}

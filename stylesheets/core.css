@@ -1,0 +1,29 @@
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css');
+
+:root {
+    --primary-color: #ffffff;
+    --contrast-color: #DCD8E2;
+    --secondary-color: #D8FF56;
+    --invisible-color: #D9D9D9;
+    --secondary-font-color: #749604;
+    --background-color: #5C00CD;
+}
+
+
+* {box-sizing: border-box;}
+
+body {
+    max-width: 100vw;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+button {
+    padding: 7.5px 15px;
+    border: none;
+    cursor: pointer;
+    transition: ease all 0.4s;
+}
+button:hover {transform: scale(1.1);}
+
+img {object-fit: cover;}

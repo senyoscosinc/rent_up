@@ -1,0 +1,412 @@
+.hero {
+    height: auto;
+    width: 98.5%;
+    display: flex;
+    gap: 70px;
+    margin: 0px auto;
+    padding: 30px;
+    background: radial-gradient(50% 50% at 50% 50%, #8B2CFF 0%, #5C00CD 100%);
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.hero-title p {
+    width: 150px;
+    padding: 10px 20px;
+    border-radius: 10px;background: #ffffffb3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    text-align: center;
+}
+.hero-title h1 {
+    color: var(--primary-color);
+    font-size: 4.3rem;
+    margin: 20px 0px;
+}
+.hero-title h1 span {
+    color: var(--secondary-color);
+}
+
+.hero-cta-btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.hero-cta-btns:hover {
+    gap: 0px;
+    transition: ease all 0.4s;
+}
+.hero-cta-btns:hover div:first-child {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.hero-cta-btns:hover div:last-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.hero-cta-btns div {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7.5px 15px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: black;
+}
+
+.hero img {
+    height: auto;
+    width: 450px;
+    margin: 0px;
+}
+
+.hero-description {
+    width: 450px;
+    color: var(--primary-color);
+}
+
+.hero-cta-btns-alt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.hero-cta-btns-alt:hover {
+    gap: 0px;
+    transition: ease all 0.4s;
+}
+.hero-cta-btns-alt:hover div:first-child {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.hero-cta-btns-alt:hover div:last-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.hero-cta-btns-alt div {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7.5px 15px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: black;
+}
+.hero-cta-btns-alt div:first-child {width: 250px;}
+
+@media screen and (max-width: 750px) {
+    .hero {
+        flex-direction: column;
+        padding-bottom: 0px;
+    }
+    .hero-title {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-title h1 {font-size: 3rem;}
+    .hero img {
+        height: auto;
+        width: 100%;
+        position: relative;
+        top: -140px;
+        margin-bottom: 0px;
+    }
+    .hero-description {
+        width: 100%;
+        position: relative;
+        top: -180px;
+        margin-bottom: -120px;
+        text-align: center;
+    }
+    .hero-cta-btns {display: none;}
+}
+
+@media screen and (min-width: 750px) and (max-width: 1100px) {
+    .hero {padding-bottom: 0px;}
+    .hero-title {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hero {flex-direction: column;}
+    .hero img {
+        height: auto;
+        width: 80%;
+        position: relative;
+        top: -180px;
+        margin: 0px auto;
+    }
+    .hero-description {
+        width: 100%;
+        display: flex;
+        gap: 100px;
+        position: relative;
+        top: -180px;
+        margin-bottom: -120px;
+    }
+    .hero-cta-btns {display: none;}
+}
+
+@media screen and (min-width: 1101px) {
+    .hero-title h1 {font-size: 4rem;}
+    .hero-cta-btns-alt {display: none;}
+}
+
+/*Problem Section*/
+.problem-section-header {
+    width: 98.5%;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: var(--contrast-color);
+    border-bottom: 0.5px solid #474747;
+}
+
+.problem-section {
+    height: 300px;
+    width: 98.5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0px auto;
+    overflow: hidden;
+    background-color: var(--contrast-color);
+}
+
+.problem {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    transition: ease all 0.3s;
+}
+.problem:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+    .problem-section {
+        height: auto;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .problem {height: 300px;}
+}
+
+/*
+.hero-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+}
+
+.hero-title h1 {
+    font-size: 3rem;
+    margin: 0px;
+}
+
+.hero-title p {
+    width: 400px;
+}
+
+.hero-image {
+    height: 500px;
+    width: 100%;
+    margin: 20px 0px;
+    padding: 20px;
+    background-image: url("../assets/images/pexels-mahdibafande.jpg");
+    background-attachment: local;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+    .hero-title {
+        flex-direction: column;
+        gap: 0px;
+    }
+    .hero-title p {width: 100%;}
+    .hero-cta-btns {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 900px) {
+    .hero-title {gap: 100px;}
+    .hero-cta-btns {left: 70%;}
+}
+*/
+
+.coming-soon-banner {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: var(--contrast-color);
+    overflow: hidden;
+}
+
+@keyframes scroll-banner {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.coming-soon-banner h2 {
+    white-space: nowrap;
+    margin: 0;
+    flex-shrink: 0;
+    animation: scroll-banner 3s linear infinite;
+}
+
+.pain-points-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.pain-points-header {
+    height: 400px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: var(--secondary-color);
+}
+
+.slider-indicator {
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+}
+
+.slider-indicator div {
+    height: 10px;
+    width: 100px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.slider-indicator div.active {
+    background-color: black;
+}
+
+
+.pain-point {
+    height: 400px;
+    width: 50%;
+    padding: 20px 50px;
+    background-attachment: local;
+    background-size: cover;
+    transition: background-image 0.3s ease;
+}
+
+.pain-point-toggle-btns {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+}
+
+.pain-point-toggle-btns div {
+    height: 40px;
+    width: 40px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 5px;
+}
+
+.pain-point-toggle-btns div:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: ease all 0.2s;
+}
+
+.pain-point-content {
+    margin-top: 150px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 750px) {
+    .pain-points-section {flex-direction: column;}
+
+    .pain-points-header, .pain-point {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.rent-up-offer {
+    width: 100%;
+    padding: 20px;
+}
+
+.offer-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--contrast-color);
+}
+
+.offer-card img {
+    height: 250px;
+    width: 450px;
+}
+
+.rent-up-for {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.rent-up-users {
+    width: 100%;
+    display: flex;
+}
+
+.rent-up-user-card {
+    height: 300px;
+    width: 50%;
+    background-color: var(--contrast-color);
+}
+
+.rent-up-user-type {
+    position: relative;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+}
