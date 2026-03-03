@@ -5,29 +5,24 @@
     gap: 70px;
     margin: 0px auto;
     padding: 30px;
-    background: radial-gradient(50% 50% at 50% 50%, #8B2CFF 0%, #5C00CD 100%);
+    background: radial-gradient(50% 50% at 50% 50%, #009957 0%, #068248 100%);
+    border-radius: 0px 0px 20px 20px;
 }
 
 .hero-title {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    color: var(--primary-color);
 }
-.hero-title p {
-    width: 150px;
-    padding: 10px 20px;
-    border-radius: 10px;background: #ffffffb3;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(2px);
-    text-align: center;
-}
+
 .hero-title h1 {
     color: var(--primary-color);
     font-size: 4.3rem;
     margin: 20px 0px;
 }
 .hero-title h1 span {
-    color: var(--secondary-color);
+    color: black;
 }
 
 .hero-cta-btns {
@@ -40,13 +35,8 @@
     gap: 0px;
     transition: ease all 0.4s;
 }
-.hero-cta-btns:hover div:first-child {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-.hero-cta-btns:hover div:last-child {
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+.hero-cta-btns:hover div {
+    transform: scale(1.05);
 }
 .hero-cta-btns div {
     height: 40px;
@@ -55,9 +45,10 @@
     justify-content: center;
     padding: 7.5px 15px;
     background-color: var(--primary-color);
-    border-radius: 5px;
     color: black;
 }
+.hero-cta-btns div:first-child {border-radius: 12px 0px 0px 12px;}
+.hero-cta-btns div:last-child {border-radius: 0px 12px 12px 0px;}
 
 .hero img {
     height: auto;
@@ -81,14 +72,6 @@
     gap: 0px;
     transition: ease all 0.4s;
 }
-.hero-cta-btns-alt:hover div:first-child {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-.hero-cta-btns-alt:hover div:last-child {
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-}
 .hero-cta-btns-alt div {
     height: 40px;
     display: flex;
@@ -99,12 +82,18 @@
     border-radius: 5px;
     color: black;
 }
-.hero-cta-btns-alt div:first-child {width: 250px;}
+.hero-cta-btns-alt div:first-child {
+    width: 250px;
+    border-radius: 15px 0px 0px 15px;
+}
+.hero-cta-btns-alt div:last-child {border-radius: 0px 15px 15px 0px;}
 
 @media screen and (max-width: 750px) {
     .hero {
+        width: 97%;
         flex-direction: column;
         padding-bottom: 0px;
+        border-radius: 0px 0px 30px 30px;
     }
     .hero-title {
         width: 100%;
@@ -131,8 +120,11 @@
     .hero-cta-btns {display: none;}
 }
 
-@media screen and (min-width: 750px) and (max-width: 1100px) {
-    .hero {padding-bottom: 0px;}
+@media screen and (min-width: 751px) and (max-width: 1100px) {
+    .hero {
+        padding-bottom: 0px;
+        border-radius: 0px 0px 30px 30px;
+    }
     .hero-title {
         width: 100%;
         display: flex;
@@ -167,28 +159,35 @@
 /*Problem Section*/
 .problem-section-header {
     width: 98.5%;
-    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+    margin: 20px auto 0px;
     padding: 20px;
-    background-color: var(--contrast-color);
-    border-bottom: 0.5px solid #474747;
 }
 
 .problem-section {
-    height: 300px;
+    height: 200px;
     width: 98.5%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 0px auto;
     overflow: hidden;
     background-color: var(--contrast-color);
+    border-radius: 20px;
 }
 
 .problem {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
     padding: 20px;
     transition: ease all 0.3s;
+}
+.problem img {
+    height: 100%;
+    width: 200px;
+    border-radius: 12px;
 }
 .problem:hover {
     background-color: var(--secondary-color);
@@ -197,216 +196,223 @@
 }
 
 @media screen and (max-width: 750px) {
-    .problem-section {
-        height: auto;
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .problem {height: 300px;}
-}
-
-/*
-.hero-title {
-    display: flex;
-    justify-content: space-between;
-    gap: 200px;
-}
-
-.hero-title h1 {
-    font-size: 3rem;
-    margin: 0px;
-}
-
-.hero-title p {
-    width: 400px;
-}
-
-.hero-image {
-    height: 500px;
-    width: 100%;
-    margin: 20px 0px;
-    padding: 20px;
-    background-image: url("../assets/images/pexels-mahdibafande.jpg");
-    background-attachment: local;
-    background-size: cover;
-    border-radius: 10px;
-}
-
-
-
-
-@media screen and (max-width: 700px) {
-    .hero-title {
+    .problem-section-header {
         flex-direction: column;
         gap: 0px;
     }
-    .hero-title p {width: 100%;}
-    .hero-cta-btns {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@media screen and (min-width: 701px) and (max-width: 900px) {
-    .hero-title {gap: 100px;}
-    .hero-cta-btns {left: 70%;}
-}
-*/
-
-.coming-soon-banner {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin: 0px auto;
-    padding: 20px;
-    background-color: var(--contrast-color);
-    overflow: hidden;
-}
-
-@keyframes scroll-banner {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.coming-soon-banner h2 {
-    white-space: nowrap;
-    margin: 0;
-    flex-shrink: 0;
-    animation: scroll-banner 3s linear infinite;
-}
-
-.pain-points-section {
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.pain-points-header {
-    height: 400px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 50px;
-    background-color: var(--secondary-color);
-}
-
-.slider-indicator {
-    display: flex;
-    align-items: center;
-    gap: 7.5px;
-}
-
-.slider-indicator div {
-    height: 10px;
-    width: 100px;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.slider-indicator div.active {
-    background-color: black;
-}
-
-
-.pain-point {
-    height: 400px;
-    width: 50%;
-    padding: 20px 50px;
-    background-attachment: local;
-    background-size: cover;
-    transition: background-image 0.3s ease;
-}
-
-.pain-point-toggle-btns {
-    position: relative;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    gap: 7.5px;
-}
-
-.pain-point-toggle-btns div {
-    height: 40px;
-    width: 40px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    border-radius: 5px;
-}
-
-.pain-point-toggle-btns div:hover {
-    opacity: 0.8;
-    transform: scale(1.1);
-    transition: ease all 0.2s;
-}
-
-.pain-point-content {
-    margin-top: 150px;
-    padding: 20px;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-}
-
-@media screen and (max-width: 750px) {
-    .pain-points-section {flex-direction: column;}
-
-    .pain-points-header, .pain-point {
-        width: 100%;
+    .problem-section {
+        width: 97%;
         height: auto;
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 20px;
+        border-radius: 30px;
+    }
+    .problem img {
+        height: 100px;
+        width: 120px;
+    }
+}
+
+@media screen and (min-width: 751px) and (max-width: 1100px) {
+    .problem-section {height: auto;}
+    .problem {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .problem img {
+        height: 150px;
     }
 }
 
 .rent-up-offer {
-    width: 100%;
+    width: 98.5%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    margin: 20px auto;
     padding: 20px;
+}
+.offer-description {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.offer-description img {
+    height: auto;
+    width: 90%;
+}
+.offer-description p {margin-top: 0px;}
+
+.rent-up-offer hr {
+    width: 100%;
+    height: 1px;
+    margin: 0px;
+    background-color: black;
+    border: none;
 }
 
 .offer-card {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 50px;
     padding: 20px;
-    background-color: var(--contrast-color);
+    align-items: center;
 }
 
-.offer-card img {
-    height: 250px;
-    width: 450px;
+.offer-card img {border-radius: 12px;}
+
+@media screen and (max-width: 750px) {
+    .offer-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .rent-up-offer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .offer-toggle {display: none;}
+    .offer-card img {
+        height: auto;
+        width: 250px;
+    }
+}
+
+/* Desktop: collapsed header that expands on hover with a cascading reveal */
+@media screen and (min-width: 1001px) {
+    .offer-card {
+        overflow: hidden;
+        max-height: 64px; /* show only header line */
+        transition: max-height 400ms ease;
+        cursor: default;
+        padding: 16px 20px;
+        position: relative;
+    }
+
+    .offer-card > div { /* text container */
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .offer-card h2 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+
+    .offer-card p {
+        margin: 0;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity 300ms ease, transform 300ms ease;
+    }
+
+    .offer-card img {
+        height: 0;
+        width: 0;
+        opacity: 0;
+        transition: opacity 300ms ease 120ms, height 300ms ease 120ms, width 300ms ease 120ms;
+    }
+
+    /* Use an open class toggled via JS instead of :hover */
+    .offer-card.open {max-height: 220px; /* expanded full view */}
+
+    .offer-card.open p {
+        opacity: 1;
+        transform: none;
+        transition-delay: 120ms; /* cascade: text appears slightly after expand */
+    }
+
+    .offer-card.open img {
+        height: 150px;
+        width: 200px;
+        opacity: 1;
+        transition-delay: 200ms; /* image appears after text for cascading effect */
+    }
+
+    /* Dropdown toggle button positioned at far right of the card */
+    .offer-toggle {
+        background: none;
+        padding: 6px 10px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        line-height: 1;
+        vertical-align: middle;
+        border: none;
+        appearance: none;
+    }
+
+    .offer-card .offer-toggle { display: block; }
+    .offer-card.open .offer-toggle { display: none; }
+
+    /* lock position on hover/active */
+    .offer-toggle:hover,
+    .offer-toggle:active {
+        transform: translateY(-50%);
+        background: none;
+    }
 }
 
 .rent-up-for {
-    width: 100%;
+    width: 98.5%;
+    display: flex;
+    gap: 10px;
+    margin: 20px auto;
     padding: 20px;
-    text-align: center;
+    border-top: 1px solid black;
 }
 
-.rent-up-users {
-    width: 100%;
-    display: flex;
+.rent-up-for h1 {
+    width: 50%;
+    text-align: left;
 }
 
 .rent-up-user-card {
-    height: 300px;
-    width: 50%;
+    height: 400px;
+    width: 24%;
     background-color: var(--contrast-color);
+    border-radius: 15px;
+    background-attachment: local;
+    background-size: cover;
 }
 
 .rent-up-user-type {
     position: relative;
-    top: 130px;
+    top: 250px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    height: 150px;
+    width: 100%;
     padding: 20px;
-    background-color: white;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.9) 100%);
+    backdrop-filter: blur(7.5px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 15px;
+    text-align: left;
+
+}
+
+#user-type-renters {background-image: url("../assets/images/woman_receiving_home_keys.png");}
+#user-type-landlords {background-image: url("../assets/images/landlord.png");}
+
+@media screen and (max-width: 750px) {
+    .rent-up-for {
+        flex-direction: column;
+        text-align: center;
+    }
+    .rent-up-for h1 {width: 100%;}
+    .rent-up-user-card {
+        width: 100%;
+        height: 400px;
+    }
 }

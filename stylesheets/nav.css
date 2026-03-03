@@ -1,19 +1,25 @@
 @import url('index.css');
 
 nav {
-    width: 98.5%;
+    width: 100%;
     position: sticky;
     top: 0;
     z-index: 10000;
+    padding-top: 10px;
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    width: 98.5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px auto 0px;
+    margin: 0px auto;
     padding: 0px 20px;
     background-color: var(--background-color);
     border-bottom: 1px solid var(--invisible-color);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 20px 20px 0px 0px;
+
 }
 
 .nav-left, .nav-right {
@@ -31,12 +37,14 @@ nav {
 .nav-contact-btn:hover {text-decoration: underline;}
 
 .nav-cta {
-    background-color: var(--secondary-color);
-    color: var(--secondary-font-color);
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
+    background-color: black;
+    color: var(--primary-color);
+    border-radius: 12px;
 }
-.nav-cta:hover {background-color: var(--primary-color);}
+.nav-cta:hover {
+    background-color: var(--primary-color);
+    color: black;
+}
 
 .drop-down-button {
     display: flex;
@@ -46,9 +54,13 @@ nav {
     color: var(--secondary-font-color);
 }
 
-@media screen and (max-width: 800px) {
-    .nav-cta, .nav-contact-btn {display: none;}
+@media screen and (max-width: 750px) {
+    .navbar {
+        width: 97%;
+        border-radius: 30px 30px 0px 0px;
+    }
+    .drop-down-button, .nav-contact-btn {display: none;}
 }
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 751px) {
     .drop-down-button {display: none;}
 }

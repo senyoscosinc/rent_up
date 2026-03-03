@@ -1,12 +1,24 @@
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css');
 
+@font-face {
+    font-family: "Anonymous Pro";
+    src: url(../assets/fonts/Anonymous_Pro.ttf);
+}
+@font-face {
+    font-family: "ArmWrestler";
+    src: url(../assets/fonts/ArmWrestler.ttf);
+}
+
 :root {
     --primary-color: #ffffff;
     --contrast-color: #DCD8E2;
-    --secondary-color: #D8FF56;
+    --secondary-color: #D1F55B;
     --invisible-color: #D9D9D9;
     --secondary-font-color: #749604;
-    --background-color: #5C00CD;
+    --background-color: #068248;
+
+    --paragraph-font: "Anonymous Pro", monospace;
+    --title-font: "ArmWrestler";
 }
 
 
@@ -27,3 +39,6 @@ button {
 button:hover {transform: scale(1.1);}
 
 img {object-fit: cover;}
+
+h1 {font-family: var(--title-font);}
+button, p, h2, ul, li {font-family: var(--paragraph-font);}

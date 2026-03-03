@@ -11,13 +11,15 @@
 </head>
 <body>
     <nav>
-        <div class="nav-left">
-            <h2>Rent Up</h2>
-        </div>
-        <div class="nav-right">
-            <button class="nav-contact-btn">Contact</button>
-            <button class="nav-cta">Get Early Access</button>
-            <button class="drop-down-button"><span>Menu</span><i class="fi fi-rs-dropdown-bar"></i></button>
+        <div class="navbar">
+            <div class="nav-left">
+                <h2>Rent Up</h2>
+            </div>
+            <div class="nav-right">
+                <button class="nav-contact-btn">Contact</button>
+                <button class="nav-cta">Get Early Access</button>
+                <button class="drop-down-button"><span>Menu</span><i class="fi fi-rs-dropdown-bar"></i></button>
+            </div>
         </div>
     </nav>
     <div class="hero">
@@ -37,14 +39,6 @@
                 <div><i class="fi fi-rs-arrow-up-right"></i></div>
             </div>
         </div>
-        <!--
-        <div class="hero-title">
-            <h1>Renting Made Simple, Transparent, And Stress-Free</h1>
-            <p>Rent Up connects renters directly with verified listings and trusted landlords. No fake listings. No unnecessary agent fees. Just better renting.</p>
-        </div>
-        <div class="hero-image">
-        </div>
-        -->
     </div>
     <div class="problem-section-header">
         <h1>Renting today is harder than it should be</h1>
@@ -52,68 +46,88 @@
     </div>
     <div class="problem-section">
         <div class="problem">
-            <h2>01</h2>
             <h2>No Transparency</h2>
+            <img src="assets/images/woman_sitting_confused.png" alt="">
         </div>
         <div class="problem">
-            <h2>02</h2>
             <h2>Fake or Outdated Listings</h2>
+            <img src="assets/images/frustrated_woman_behind_laptop.png" alt="">
         </div>
         <div class="problem">
-            <h2>03</h2>
             <h2>Endless Calls & Wasted Visits</h2>
+            <img src="assets/images/woman_making_frustrating_phonecall.png" alt="">
         </div>
     </div>
     
     <div class="rent-up-offer">
-        <h1>Rent Up changes the experience</h1>
-        <p>Evenything you need to rent smarter - in one platform</p>
-    </div>
-    <div class="offer-card">
-        <div>
-            <h2>Verified Rental Listings</h2>
-            <p>Browse verified listings. Real homes, real availability</p>
+        <div class="offer-description">
+            <img src="assets/images/website_mockup.png" alt="">
+            <h1>Rent Up changes the experience</h1>
+            <p>Evenything you need to rent smarter - in one platform</p>
         </div>
-        <img src="" alt="">
-    </div>
-    <div class="offer-card">
-        <img src="" alt="">
-        <div>
-            <h2>Direct Renter-Landlord Connections</h2>
-            <p>Connect directly. No middlemen. No confusion</p>
-        </div>
-    </div>
-    <div class="offer-card">
-        <div>
-            <h2>Clear Details, No Hidden Surprises</h2>
-            <p>Rent with confidence</p>
-        </div>
-        <img src="" alt="">
-    </div>
-    <div class="offer-card">
-        <img src="" alt="">
-        <div>
-            <h2>Faster, Simple Decision-Making</h2>
-            <p>Clear information, faster decisions</p>
+        <div class="offer-points">
+            <div class="offer-card">
+                <div>
+                    <h2>Verified Rental Listings</h2>
+                    <p>Browse verified listings. Real homes, real availability</p>
+                </div>
+                <button class="offer-toggle" aria-expanded="false">More <i class="fi fi-rs-dropdown-bar"></i></button>
+                <img src="assets/images/woman-smiling.png" alt="">
+            </div>
+            <hr>
+            <div class="offer-card">
+                <div>
+                    <h2>Direct Renter-Landlord Connections</h2>
+                    <p>Connect directly. No middlemen. No confusion</p>
+                </div>
+                <button class="offer-toggle" aria-expanded="false">More <i class="fi fi-rs-dropdown-bar"></i></button>
+                <img src="assets/images/woman_shaking_hands_with_older_man.png" alt="">
+            </div>
+            <hr>
+            <div class="offer-card">
+                <div>
+                    <h2>Clear Details, No Hidden Surprises</h2>
+                    <p>Rent with confidence</p>
+                </div>
+                <button class="offer-toggle" aria-expanded="false">More <i class="fi fi-rs-dropdown-bar"></i></button>
+                <img src="assets/images/woman_reading_document.png" alt="">
+            </div>
+            <hr>
+            <div class="offer-card">
+                <div>
+                    <h2>Faster, Simple Decision-Making</h2>
+                    <p>Clear information, faster decisions</p>
+                </div>
+                <button class="offer-toggle" aria-expanded="false">More <i class="fi fi-rs-dropdown-bar"></i></button>
+                <img src="assets/images/woman_carrying_a_box.png" alt="">
+            </div>
+
         </div>
     </div>
     <div class="rent-up-for">
         <h1>Who Is Rent Up For?</h1>
-    </div>
-    <div class="rent-up-users">
-        <div class="rent-up-user-card">
+        <div class="rent-up-user-card" id="user-type-renters">
             <div class="rent-up-user-type">
                 <h2>For Renters</h2>
-                <div></div>
+                <ul>
+                    <li>Find genuine homes faster</li>
+                    <li>Avoid fake listings</li>
+                    <li>Save money and time</li>
+                </ul>
             </div>
         </div>
-        <div class="rent-up-user-card">
+        <div class="rent-up-user-card" id="user-type-landlords">
             <div class="rent-up-user-type">
                 <h2>For Landlords</h2>
-                <div></div>
+                <ul>
+                    <li>Reach serious renters</li>
+                    <li>List properties easily</li>
+                    <li>Reduce vacancy time</li>
+                </ul>
             </div>
         </div>
     </div>
+    
     <div>
         <div>
             <h1>Be among the first to use Rent Up</h1>
@@ -139,4 +153,5 @@
         </div>
     </div>
 </body>
+<script src="scripts/offer-cards.js"></script>
 </html>
