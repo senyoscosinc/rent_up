@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Navigation Menu Toggle
+  const menuButton = document.querySelector('.menu-button');
+  const closeMenuButton = document.querySelector('.close-menu-button');
+  const navMenu = document.querySelector('.nav-menu');
+
+  function openMenu() {
+    navMenu.classList.add('open');
+  }
+
+  function closeMenu() {
+    navMenu.classList.remove('open');
+  }
+
+  // Menu button click
+  if (menuButton) {
+    menuButton.addEventListener('click', openMenu);
+  }
+
+  // Close button click
+  if (closeMenuButton) {
+    closeMenuButton.addEventListener('click', closeMenu);
+  }
+
+  // ESC key to close menu
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
+  });
+
+  // Offer Card Toggle
   const cards = Array.from(document.querySelectorAll('.offer-card'));
   function closeAll() {
     cards.forEach(card => {
@@ -31,5 +62,25 @@ document.addEventListener('DOMContentLoaded', function() {
   // Close when clicking anywhere else on the document
   document.addEventListener('click', function() {
     closeAll();
+  });
+
+  // FAQ Toggle
+  const faqItems = Array.from(document.querySelectorAll('.faq-item'));
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    if (!question) return;
+
+    question.addEventListener('click', function() {
+      // Close all other FAQ items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+        }
+      });
+
+      // Toggle current FAQ item
+      item.classList.toggle('active');
+    });
   });
 });

@@ -6,7 +6,9 @@ nav {
     top: 0;
     z-index: 10000;
     padding-top: 10px;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
+    color: var(--font-color);
+    border-bottom: 1px solid var(--background-color);
 }
 
 .navbar {
@@ -16,10 +18,7 @@ nav {
     justify-content: space-between;
     margin: 0px auto;
     padding: 0px 20px;
-    background-color: var(--background-color);
-    border-bottom: 1px solid var(--invisible-color);
-    border-radius: 20px 20px 0px 0px;
-
+    background-color: var(--primary-color);
 }
 
 .nav-left, .nav-right {
@@ -28,39 +27,99 @@ nav {
     gap: 10px;
 }
 
-.nav-left {color: var(--primary-color);}
-
-.nav-contact-btn {
-    color: var(--primary-color);
-    background-color: transparent;
-}
-.nav-contact-btn:hover {text-decoration: underline;}
-
-.nav-cta {
-    background-color: black;
-    color: var(--primary-color);
-    border-radius: 12px;
-}
-.nav-cta:hover {
-    background-color: var(--primary-color);
-    color: black;
+.menu-button {
+    background-color: var(--contrast-color);
+    color: var(--background-color);
 }
 
-.drop-down-button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: transparent;
-    color: var(--secondary-font-color);
+.menu-button:hover {
+    background-color: var(--background-color);
+    color: var(--contrast-color);
 }
 
 @media screen and (max-width: 750px) {
-    .navbar {
-        width: 97%;
-        border-radius: 30px 30px 0px 0px;
-    }
-    .drop-down-button, .nav-contact-btn {display: none;}
+    .navbar {width: 97%;}
 }
-@media screen and (min-width: 751px) {
-    .drop-down-button {display: none;}
+
+.nav-menu {
+    height: 97%;
+    width: 98.5%;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 20px 20px 20px;
+    background-color: var(--contrast-color);
+    color: var(--background-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    visibility: hidden;
+}
+
+.nav-menu.open {
+    max-height: 100vh;
+    visibility: visible;
+}
+
+.nav-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-menu.open .nav-menu-header {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.nav-menu-links > div {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-menu.open .nav-menu-links > div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-menu.open .nav-menu-links > div:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.nav-menu.open .nav-menu-links > div:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.nav-menu.open .nav-menu-links > div:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.nav-menu.open .nav-menu-links > div:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.nav-menu.open .nav-menu-links > div:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.nav-menu hr {
+    height: 1px;
+    border: none;
+    background-color: var(--background-color);
+}
+
+.nav-menu-links h1:hover {
+    margin-left: 30px;
+    cursor: pointer;
+    transition: ease all 0.3s;
+
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="stylesheets/nav.css">
     <link rel="stylesheet" href="stylesheets/core.css">
     <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/footer.css">
     <title>Rent Up - Homepage</title>
 </head>
 <body>
@@ -16,16 +17,37 @@
                 <h2>Rent Up</h2>
             </div>
             <div class="nav-right">
-                <button class="nav-contact-btn">Contact</button>
-                <button class="nav-cta">Get Early Access</button>
-                <button class="drop-down-button"><span>Menu</span><i class="fi fi-rs-dropdown-bar"></i></button>
+                <button class="menu-button">Menu</button>
+            </div>
+        </div>
+
+        <!-- Nav Menu-->
+        <div class="nav-menu">
+            <div class="nav-menu-header">
+                <h2>Rent Up</h2>
+                <button class="close-menu-button">Close</button>
+            </div>
+            <div class="nav-menu-links">
+                <div>
+                    <h1>About</h1>
+                </div>
+                <hr>
+                <div>
+                    <h1>Contact</h1>
+                </div>
+                <hr>
+                <div>
+                    <h1>Join Waitlist</h1>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Hero Section -->
     <div class="hero">
         <div class="hero-title">
-            <p>Coming Soon</p>
-            <h1>Renting Made <span>Simple</span>, <span>Transparent</span>, And <span>Stress-Free</span></h1>
+            <p>Launching in Accra. Built for Ghana.</p>
+            <h1>Rent Smarter. List Safer. Live Confidently.</h1>
             <div class="hero-cta-btns">
                 <div>Join The Waitlist</div>
                 <div><i class="fi fi-rs-arrow-up-right"></i></div>
@@ -33,125 +55,224 @@
         </div>
         <img src="assets/images/hero-img-feat.png" alt="">
         <div class="hero-description">
-            <p>Rent Up connects renters directly with verified listings and trusted landlords. No fake listings. No unnecessary agent fees. Just better renting</p>
+            <p>Rent Up is a trust-first rental marketplace connecting verified landlords and serious renters through a built-in KYC system — eliminating fraud, wasted time, and uncertainty.</p>
             <div class="hero-cta-btns-alt">
                 <div>Join The Waitlist</div>
                 <div><i class="fi fi-rs-arrow-up-right"></i></div>
             </div>
         </div>
     </div>
+    
+    <!-- Problem Section-->
+    <div class="section-tag">
+        <p>The Problem</p>
+    </div>
     <div class="problem-section-header">
-        <h1>Renting today is harder than it should be</h1>
-        <p>Renters and landlords both lose time, money, and peace of mind</p>
+        <h1>The Rental Market Shouldn’t Feel Like a Gamble</h1>
+        <img src="assets/images/woman_sitting_with_laptop.png" alt="">
     </div>
     <div class="problem-section">
-        <div class="problem">
-            <h2>No Transparency</h2>
-            <img src="assets/images/woman_sitting_confused.png" alt="">
+        <div class="problem-group">
+            <div class="problem-group-header">
+                <h2>For Renters</h2>
+            </div>
+            <div class="problem-statement">
+                <p>Misleading Listings</p>
+                <p>Many renters encounter listings that misrepresent availability, pricing, or condition, leading to repeated disappointment and wasted time.</p>
+            </div>
+            <div class="problem-statement">
+                <p>Unverified Representation</p>
+                <p>Without structured verification, renters struggle to confirm whether agents legitimately represent properties, increasing uncertainty and financial risk.</p>
+            </div>
         </div>
-        <div class="problem">
-            <h2>Fake or Outdated Listings</h2>
-            <img src="assets/images/frustrated_woman_behind_laptop.png" alt="">
-        </div>
-        <div class="problem">
-            <h2>Endless Calls & Wasted Visits</h2>
-            <img src="assets/images/woman_making_frustrating_phonecall.png" alt="">
+        <div class="problem-group">
+            <div class="problem-group-header">
+                <h2>For Landlords</h2>
+            </div>
+            <div class="problem-statement">
+                <p>High Vacancy Due to Low Reach</p>
+                <p>Fragmented exposure across informal channels extends vacancy periods and reduces consistent tenant acquisition.</p>
+            </div>
+            <div class="problem-statement">
+                <p>Unqualified Inquiries</p>
+                <p>Unfiltered inquiries create operational inefficiency, slowing legitimate tenant acquisition and increasing communication fatigue.</p>
+            </div>
         </div>
     </div>
-    
-    <div class="rent-up-offer">
-        <div class="offer-description">
-            <img src="assets/images/website_mockup.png" alt="">
-            <h1>Rent Up changes the experience</h1>
-            <p>Evenything you need to rent smarter - in one platform</p>
+
+    <!-- Difference Section-->
+    <div class="difference-section">
+        <div class="section-tag">
+            <p>The Difference</p>
         </div>
-        <div class="offer-points">
-            <div class="offer-card">
-                <div>
-                    <h2>Verified Rental Listings</h2>
-                    <p>Browse verified listings. Real homes, real availability</p>
+        <div class="difference-section-header">
+            <h1>Trust Is Built Into the System</h1>
+            <p>Rent Up enforces trust through verification and a structured KYC system for landlords, agents, and agencies before listings go live.</p>
+        </div>
+        <div class="difference-section-content">
+            <div class="difference-card">
+                <div class="difference-card-header">
+                    <p>01</p>
+                    <p>Rigid identity verification</p>
                 </div>
-                <button class="offer-toggle" aria-expanded="false">More <i class="fi fi-rs-dropdown-bar"></i></button>
-                <img src="assets/images/woman-smiling.png" alt="">
+                <p>Every landlord, agent, and agency undergoes structured identity verification before participation, creating accountability within the ecosystem and preventing anonymous listings that commonly lead to scams, impersonation, or misleading property advertisements.</p>
             </div>
-            <hr>
-            <div class="offer-card">
-                <div>
-                    <h2>Direct Renter-Landlord Connections</h2>
-                    <p>Connect directly. No middlemen. No confusion</p>
+            <div class="difference-card">
+                <div class="difference-card-header">
+                    <p>02</p>
+                    <p>Structured listing framework</p>
                 </div>
-                <button class="offer-toggle" aria-expanded="false">More <i class="fi fi-rs-dropdown-bar"></i></button>
-                <img src="assets/images/woman_shaking_hands_with_older_man.png" alt="">
+                <p>Properties must meet defined listing standards before publication, ensuring clearer property information, more complete descriptions, and improved transparency that helps renters make informed decisions without relying on incomplete or vague advertisements.</p>
             </div>
-            <hr>
-            <div class="offer-card">
-                <div>
-                    <h2>Clear Details, No Hidden Surprises</h2>
-                    <p>Rent with confidence</p>
+            <div class="difference-card">
+                <div class="difference-card-header">
+                    <p>03</p>
+                    <p>Transparent profile credibility</p>
                 </div>
-                <button class="offer-toggle" aria-expanded="false">More <i class="fi fi-rs-dropdown-bar"></i></button>
-                <img src="assets/images/woman_reading_document.png" alt="">
+                <p>Verified badges and visible credibility indicators help renters immediately distinguish legitimate listers from unverified participants, reducing uncertainty and enabling faster, more confident engagement within a marketplace built on structured accountability.</p>
             </div>
-            <hr>
-            <div class="offer-card">
-                <div>
-                    <h2>Faster, Simple Decision-Making</h2>
-                    <p>Clear information, faster decisions</p>
+            <div class="difference-card">
+                <div class="difference-card-header">
+                    <p>04</p>
+                    <p>Reduced Fraud Exposure</p>
                 </div>
-                <button class="offer-toggle" aria-expanded="false">More <i class="fi fi-rs-dropdown-bar"></i></button>
+                <p>By enforcing identity checks and participation controls, the platform significantly lowers the likelihood of fraudulent listings, advance payment scams, and impersonation tactics that commonly affect renters navigating unregulated property marketplaces.</p>
+            </div>
+            <div class="difference-card">
+                <div class="difference-card-header">
+                    <p>05</p>
+                    <p>Designed for Serious Participation</p>
+                </div>
+                <p>The onboarding structure discourages casual or unserious participation by introducing accountability at entry, ensuring that interactions on the platform are more likely to result in meaningful inquiries, professional communication, and successful rental agreements.</p>
+            </div>
+            <div class="difference-cta-card"></div>
+        </div>
+    </div>
+
+    <!-- How it works section-->
+    <div class="section-tag">
+        <p>How It Works</p>
+    </div>
+    <div class="how-it-works-section">
+        <div class="user-type">
+            <div class="user-type-header">
+                <h1>Built For Renters</h1>
                 <img src="assets/images/woman_carrying_a_box.png" alt="">
             </div>
+            <div class="user-type-benefit">
+                <p>01</p>
+                <p>Discover verified listings</p>
+            </div>
+            <div class="user-type-benefit">
+                <p>02</p>
+                <p>Connect with accountable listers</p>
+            </div>
+            <div class="user-type-benefit">
+                <p>03</p>
+                <p>Secure with confidence</p>
+            </div>
+        </div>
+        <div class="user-type">
+            <div class="user-type-header">
+                <h1>Built For Landlords</h1>
+                <img src="assets/images/landlord.png" alt="Landlord">
+            </div>
+            <div class="user-type-benefit">
+                <p>01</p>
+                <p>Complete KYC verification</p>
+            </div>
+            <div class="user-type-benefit">
+                <p>02</p>
+                <p>List professionally structured properties</p>
+            </div>
+            <div class="user-type-benefit">
+                <p>03</p>
+                <p>Attract serious renters</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="final-cta">
+        <div class="final-cta-content">
+            <img src="assets/images/woman-smiling.png" alt="">
+            <h1>Get Early Access - Stay Ahead Of The Rush</h1>
         </div>
-    </div>
-    <div class="rent-up-for">
-        <h1>Who Is Rent Up For?</h1>
-        <div class="rent-up-user-card" id="user-type-renters">
-            <div class="rent-up-user-type">
-                <h2>For Renters</h2>
-                <ul>
-                    <li>Find genuine homes faster</li>
-                    <li>Avoid fake listings</li>
-                    <li>Save money and time</li>
-                </ul>
+        <div class="final-cta-cards">
+            <div class="cta-card">
+                <div class="cta-card-header">
+                    <p>01</p>
+                </div>
+                <p>Priority early access at launch</p>
+            </div>
+            <div class="cta-link"></div>
+            <div class="cta-card">
+                <div class="cta-card-header">
+                    <p>02</p>
+                </div>
+                <p>Beta tester privileges</p>
+            </div>
+            <div class="cta-card">
+                <div class="cta-card-header">
+                    <p>04</p>
+                </div>
+                <p>Opportunity to shape product features</p>
             </div>
         </div>
-        <div class="rent-up-user-card" id="user-type-landlords">
-            <div class="rent-up-user-type">
-                <h2>For Landlords</h2>
-                <ul>
-                    <li>Reach serious renters</li>
-                    <li>List properties easily</li>
-                    <li>Reduce vacancy time</li>
-                </ul>
+    </div>
+
+    <!-- FAQs -->
+    <div class="faqs">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                <p>How does Rent Up verify landlords and agents?</p>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Rent Up implements a structured KYC process that requires landlords and agents to submit valid identification documents, proof of property ownership or management rights, and undergo background checks before they can list properties on the platform.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <p>What measures are in place to prevent fraudulent listings?</p>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>By enforcing identity verification and listing standards, Rent Up significantly reduces the likelihood of fraudulent listings. Additionally, the platform has a reporting system that allows users to flag suspicious activity for review.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <p>Can renters communicate directly with landlords through the platform?</p>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, once a renter finds a verified listing they are interested in, they can communicate directly with the landlord or agent through Rent Up's secure messaging system, which helps facilitate transparent and accountable interactions.</p>
             </div>
         </div>
     </div>
-    
-    <div>
-        <div>
-            <h1>Be among the first to use Rent Up</h1>
-            <p>Be among the first to use Rent Up</p>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <p>Links</p>
+                <p>About</p>
+                <p>Contact</p>
+            </div>
+            <div>
+                <p>Follow Us</p>
+                <p>Instagram</p>
+                <p>Linked In</p>
+                <p>X</p>
+            </div>
         </div>
-        <form action="">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-            <label for="user-type">User Type</label>
-            <select id="user-type" name="user-type">
-                <option value="renter">Renter</option>
-                <option value="landlord">Landlord</option>
-            </select>
-            <button type="submit">Join Waitlist</button>
-        </form>
-    </div>
-    <div>
-        <div>
-            <h1>Launching Soon In Accra!</h1>
-            <h2>Built with renters and landlords in mind</h2>
+        <div class="footer-bottom">
+            <h1>Rent Up</h1>
+            <p>© 2026 Rent Up. All rights reserved.</p>
         </div>
-    </div>
+    </footer>
+
 </body>
 <script src="scripts/offer-cards.js"></script>
 </html>
