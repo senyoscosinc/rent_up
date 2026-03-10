@@ -273,6 +273,52 @@
         </div>
     </footer>
 
+    <!-- Popup Cards-->
+    <!-- Join Waitlist Popup -->
+    <div class="waitlist-card">
+        <div class="waitlist-card-header">
+            <h2>Rent Up</h2>
+            <button>Close</button>
+        </div>
+        <div class="waitlist-card-main">
+            <div class="waitlist-card-title">
+                <h1>Secure Early Access - Join Accra's Trusted Rental Platform</h1>
+                <img src="assets/images/woman_shaking_hands_with_older_man.png" alt="">
+            </div>
+            <form action="" class="waitlist-form">
+                <div class="form-row">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-row">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" placeholder="Enter your phone number">
+                </div>
+                <label for="status">I am a...</label>
+                <select name="status" id="join-status" required>
+                    <option value="">Select your preference</option>
+                    <option value="renter">Renter</option>
+                    <option value="landlord">Landlord</option>
+                    <option value="agent">Agent</option>
+                    <option value="agency">Agency</option>
+                </select>
+                <div class="form-row-alt">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to receive updates and promotional materials from Rent Up.</label>
+                </div>
+                <div class="form-row-alt">
+                    <input type="checkbox" id="beta" required>
+                    <label for="beta">I wish to sign up for the close beta program</label>
+                </div>
+                <button type="submit" class="waitlist-submit">Secure My Early Access</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 <script src="scripts/offer-cards.js"></script>
 </html>
