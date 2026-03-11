@@ -4,7 +4,8 @@ footer {
     width: 98.5%;
     padding: 20px;
     margin: 20px auto;
-    background-color: var(--primary-color);
+    background-color: var(--font-color);
+    color: var(--background-color);
 }
 
 .footer-top {

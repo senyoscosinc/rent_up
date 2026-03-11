@@ -4,35 +4,54 @@ nav {
     width: 100%;
     position: sticky;
     top: 0;
-    z-index: 10000;
+    z-index: 1000;
     padding-top: 10px;
     background-color: var(--background-color);
     color: var(--font-color);
     border-bottom: 1px solid var(--background-color);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Make nav transparent when scrolled */
+nav.scrolled {
+    background-color: transparent;
+    border-bottom: none;
 }
 
 .navbar {
+    height: 50px;
     width: 98.5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0px auto;
-    padding: 0px 20px;
+    padding: 10px 8px;
     background-color: var(--primary-color);
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-.nav-left, .nav-right {
+/* Transparent background with subtle blur when scrolled */
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid white;
+}
+.navbar-left, .navbar-right {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.menu-button {
+.open-menu-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     background-color: var(--contrast-color);
     color: var(--background-color);
 }
-
-.menu-button:hover {
+.open-menu-button i {margin-top: 5px;}
+.open-menu-button:hover {
     background-color: var(--background-color);
     color: var(--contrast-color);
 }
@@ -42,44 +61,66 @@ nav {
 }
 
 .nav-menu {
-    height: 97%;
-    width: 98.5%;
+    height: 100vh;
+    width: 100%;
     position: fixed;
-    top: 10px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px 20px 20px 20px;
+    padding: 10px;
     background-color: var(--contrast-color);
     color: var(--background-color);
+    /* hidden initially, with animated visibility */
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
     visibility: hidden;
+    transition: max-height 0.5s ease-in-out, visibility 0s linear 0.5s;
 }
 
 .nav-menu.open {
     max-height: 100vh;
     visibility: visible;
+    transition: max-height 0.5s ease-in-out;
 }
 
-.nav-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* cascade all direct children of the menu (header and link container) */
+.nav-menu > * {
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
-
-.nav-menu.open .nav-menu-header {
+.nav-menu.open > * {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0s;
+}
+.nav-menu.open > *:nth-child(1) {transition-delay: 0.1s;}
+.nav-menu.open > *:nth-child(2) {transition-delay: 0.2s;}
+
+/* header styles remain simple, animation is handled above */
+.nav-menu-header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.close-menu-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: var(--background-color);
+}
+.close-menu-button:hover span{text-decoration: underline;}
+.close-menu-button i {
+    margin-top: 5px;
+    transform: rotate(45deg);
+}
+
+/* link items cascade with additional delays */
 .nav-menu-links > div {
     opacity: 0;
     transform: translateY(-20px);
@@ -91,25 +132,11 @@ nav {
     transform: translateY(0);
 }
 
-.nav-menu.open .nav-menu-links > div:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.nav-menu.open .nav-menu-links > div:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.nav-menu.open .nav-menu-links > div:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-.nav-menu.open .nav-menu-links > div:nth-child(4) {
-    transition-delay: 0.4s;
-}
-
-.nav-menu.open .nav-menu-links > div:nth-child(5) {
-    transition-delay: 0.5s;
-}
+.nav-menu.open .nav-menu-links > div:nth-child(1) {transition-delay: 0.3s;}
+.nav-menu.open .nav-menu-links > div:nth-child(2) {transition-delay: 0.4s;}
+.nav-menu.open .nav-menu-links > div:nth-child(3) {transition-delay: 0.5s;}
+.nav-menu.open .nav-menu-links > div:nth-child(4) {transition-delay: 0.6s;}
+.nav-menu.open .nav-menu-links > div:nth-child(5) {transition-delay: 0.7s;}
 
 .nav-menu hr {
     height: 1px;

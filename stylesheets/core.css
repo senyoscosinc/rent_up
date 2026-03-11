@@ -1,25 +1,26 @@
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css');
 
 @font-face {
-    font-family: "Anonymous Pro";
-    src: url(../assets/fonts/Anonymous_Pro.ttf);
+    font-family: "Red Hat";
+    src: url(../assets/fonts/RedHatText-Regular.otf);
 }
 @font-face {
-    font-family: "ArmWrestler";
-    src: url(../assets/fonts/ArmWrestler.ttf);
+    font-family: "Red Hat Display";
+    src: url(../assets/fonts/RedHatDisplay-Bold.otf);
 }
 
 :root {
     /*Color Variables*/
-    --primary-color: #707F6F;
-    --secondary-color: #1C261F;
+    --primary-color: #7E89FB;
+    --secondary-color: #464EA8;
     --contrast-color: #DF3838;
     --background-color: #F1F1F1;
     --background-complimentary-color: #E1E1E1;
     --font-color: #1E1E1E;
+    --complimentary-font-color: #2E2E2E;
     /*Font Variables*/
-    --paragraph-font: "Anonymous Pro", monospace;
-    --title-font: "ArmWrestler";
+    --paragraph-font: "Red Hat", monospace;
+    --title-font: "Red Hat Display";
 }
 
 
@@ -43,8 +44,8 @@ button {
     cursor: pointer;
     transition: ease all 0.4s;
 }
-button:hover {transform: scale(1.1);}
 
 img {object-fit: cover;}
 
-/*button, p, h1, h2, ul, li {font-family: var(--paragraph-font);}*/
+h1, h2 {font-family: var(--title-font);}
+
